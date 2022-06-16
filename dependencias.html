@@ -84,7 +84,7 @@
          
           <li class="nav-item">
             <center>
-            <a href="/index.html"  class="nav-link activa" id="mnu_Inicio"><!--class="nav-link activa"-->
+            <a href="/index.html" class="nav-link" id="mnu_Inicio">
               <img src="images/home.png" alt="" class="img-fluid" style="width: 64px;"><br>
               <p class="text-decoration-none">Inicio</p>
             </a>
@@ -105,7 +105,7 @@
              
           <li class="nav-item">
             <center>
-            <a href="/dependencias.html" class="nav-link" id="mnu_Dependencias">
+            <a href="/dependencias.html" class="nav-link activa" id="mnu_Dependencias">
               <img src="images/dependencias.png" alt="" class="img-fluid" style="width: 64px;"><br>
               <p class="text-decoration-none">Dependencias</p>
             </a>
@@ -170,8 +170,8 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div  class="col-sm-6">
-            <h1 class="m-0">inicio</h1>
+            <div class="col-sm-6">
+                <h1 class="m-0">Panel de Control Dependencias</h1>
           </div><!-- /.col -->
 
         </div><!-- /.row -->
@@ -180,7 +180,63 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card">
+              
+              <div class="card-body">
+                <center>
+                <h3 class="text-maroon" id="lbl_Titulo">Nayarit.gob.mx</h3>
+                <p class="text-muted small" id="lbl_Descripcion">Portal principal del Gobierno del Estado</p>
+                <p class="card-text">
+                  <img src="images/servicios/nayarit_gob_mx.png" class="img-fluid">
+                </p>
+              </center>
+                <div class="row">
+                  <div class="col-md-3 col-lg-3">
+                    <center>
+                      <img src="images/cancel.png" class="img-fluid" style="width: 48px;">
+                  </center>
+                  </div>
+                  <div class="col-md-9 col-lg-9">
+                    <i class="fas fa-clock mr-2"></i>10:00 PM<br>
+                    <!-- <i class="fas fa-comment"></i> Tiene observaciones --> 
+                   <i class="fas fa-comment-slash mr-2"></i>Sin observaciones<br>
+                   <i class="fas fa-user mr-2"></i>Damaris Gallegos<br>
+                    <a href="javascript:void(0);" id="btn_consultar" data-id="1" class="badge badge-primary">
+                      <i class="fas fa-chart-line mr-2"></i>Consultar en vivo
+                    </a>   
+                  </div>                  
+                </div>
+                
+              
+              </div>
+            </div>
 
+
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+
+              <div class="card-body">
+                <h3 class="text-maroon">Titulo del widgett</h3>
+
+                <p class="card-text">
+                  Contenido del widget.
+                </p>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
   </div>

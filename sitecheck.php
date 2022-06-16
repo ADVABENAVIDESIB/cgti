@@ -1,13 +1,11 @@
 <?php 
- 
-
-//$url = "www.contraloria.nayarit.gob.mx";
-$url = $_GET['u'];
+ $url = "https://www.nayarit.gob.mx";
+//$url = $_GET['u'];
 
 
-$response = fsockopen($url, 80, $errno, $errstr, 30); 
+//$response = fsockopen($url, 80, $errno, $errstr, 30); 
 
-var_dump($response); 
+//var_dump($response); 
 
 echo "<hr>";
 function url_test( $url ) {
@@ -35,5 +33,4 @@ if( !url_test( $url ) ) {
 }
 
  
-?> 
-
+?>

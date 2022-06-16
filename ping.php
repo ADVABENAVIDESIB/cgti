@@ -1,11 +1,10 @@
 <?php
-
-$url = $_GET['u'];
-
+$url1='https://www.nayarit.gob.mx/HTML/despacho.html';
+//$url1 = $_GET['https://www.nayarit.gob.mx/HTML/despacho.html'];
 // Function to check response time
 function pingDomain($domain){
     $starttime = microtime(true);
-    $file      = fsockopen ($domain, 80, $errno, $errstr, 10);
+  //  $file      = fsockopen ($domain, 80, $errno, $errstr, 10);
     $stoptime  = microtime(true);
     $status    = 0;
 
@@ -17,5 +16,5 @@ function pingDomain($domain){
     }
     return $status;
 }
-echo pingDomain($url);
+echo pingDomain($url1);
 ?>
