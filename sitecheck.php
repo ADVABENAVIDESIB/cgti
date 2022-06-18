@@ -1,10 +1,6 @@
 <?php 
- $url = "https://www.nayarit.gob.mx";
 //$url = $_GET['u'];
-
-
 //$response = fsockopen($url, 80, $errno, $errstr, 30); 
-
 //var_dump($response); 
 
 echo "<hr>";
@@ -26,11 +22,10 @@ function url_test( $url ) {
 	curl_close( $ch );
 }
 
-if( !url_test( $url ) ) {
-	echo $url ." esta caído";
-} else {
-	echo $url ." funciona correctamente.";
-}
-
+// if( !url_test( $url ) ) {
+// 	echo $url .'<img src="images/cancel.png" class="img-fluid" style="width: 48px;">';
+// } else {
+// 	echo $url .'<img src="images/check.png" class="img-fluid" style="width: 48px;">';
+// }
  
 ?>

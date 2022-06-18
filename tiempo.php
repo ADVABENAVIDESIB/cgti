@@ -1,6 +1,6 @@
 <?php
-$url = $_GET['u'];
-
+//$url = $_GET['u'];
+$url = "https://www.nayarit.gob.mx";
 
 //Crea una variable con el tiempo inicial
 $tiempo_inicial = microtime(true);

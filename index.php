@@ -84,7 +84,7 @@
          
           <li class="nav-item">
             <center>
-            <a href="/index.html"  class="nav-link activa" id="mnu_Inicio"><!--class="nav-link activa"-->
+            <a href="index.php"  class="nav-link activa" id="mnu_Inicio"><!--class="nav-link activa"-->
               <img src="images/home.png" alt="" class="img-fluid" style="width: 64px;"><br>
               <p class="text-decoration-none">Inicio</p>
             </a>

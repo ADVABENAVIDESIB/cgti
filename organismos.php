@@ -7,17 +7,14 @@
   <title>Telemetria Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!--ESTILOS-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <style>
     .activa {
@@ -108,7 +105,7 @@
 
             <li class="nav-item">
               <center>
-                <a href="dependencias.php" class="nav-link activa" id="mnu_Dependencias">
+                <a href="dependencias.php" class="nav-link" id="mnu_Dependencias">
                   <img src="images/dependencias.png" alt="" class="img-fluid" style="width: 64px;"><br>
                   <p class="text-decoration-none">Dependencias</p>
                 </a>
@@ -119,7 +116,7 @@
 
             <li class="nav-item">
               <center>
-                <a href="organismos.php" class="nav-link" id="mnu_OPDs">
+                <a href="organismos.php" class="nav-link activa" id="mnu_OPDs">
                   <img src="images/opds.png" alt="" class="img-fluid" style="width: 64px;"><br>
                   <p class="text-decoration-none">OPDs</p>
                 </a>
@@ -174,7 +171,8 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Panel de Control Dependencias</h1>
+
+              <h1 class="m-0">Panel de Control Organismos</h1>
             </div><!-- /.col -->
 
           </div><!-- /.row -->
@@ -185,56 +183,59 @@
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
+          <!-- Inicio carta -->
           <div class="row">
             <div class="col-lg-3">
               <div class="card">
-
                 <div class="card-body">
                   <center>
                     <h3 class="text-maroon" id="lbl_Titulo">Nayarit.gob.mx</h3>
                     <p class="text-muted small" id="lbl_Descripcion">Portal principal del Gobierno del Estado</p>
                     <p class="card-text">
+                      <?php
+                      
+                      ?>
                       <img src="images/servicios/nayarit_gob_mx.png" class="img-fluid">
                     </p>
                   </center>
                   <div class="row">
                     <div class="col-md-3 col-lg-3">
-                      <a href="http://localhost:3000/sitecheck.php">
-                      <img src="images/cancel.png" class="img-fluid" style="width: 48px;">
-                    </a>
+                      <?php
+                      $url = "nayarit.gob.mx";
+                      //include('sitecheck.php');
+                      // if (url_test($url)) {
+                      if($socket =@ fsockopen($url, 80, $errno, $errstr, 30)) {
+                        $comp = '<img src="images/check.png" class="img-fluid" style="width: 48px;">';
+                      } else {
+                        $comp = '<img src="images/cancel.png" class="img-fluid" style="width: 48px;">';
+                      }
+                      echo $comp
+                      ?>
                     </div>
                     <div class="col-md-9 col-lg-9">
-                      <i class="fas fa-clock mr-2"></i>10:00 PM<br>
+                      <i class="fas fa-clock mr-2"></i><?php echo date('H:i');?><br>
                       <!-- <i class="fas fa-comment"></i> Tiene observaciones -->
                       <i class="fas fa-comment-slash mr-2"></i>Sin observaciones<br>
                       <i class="fas fa-user mr-2"></i>Damaris Gallegos<br>
-                      <a href="javascript:void(0);" id="btn_consultar" data-id="1" class="badge badge-primary">
+                      <a href="https://nayarit.gob.mx" target="_blank" id="btn_consultar" data-id="1" class="badge badge-primary">
                         <i class="fas fa-chart-line mr-2"></i>Consultar en vivo
                       </a>
                     </div>
                   </div>
-
-
                 </div>
               </div>
-
-
             </div>
+            <!-- Final carta -->
             <!-- /.col-md-6 -->
             <div class="col-lg-6">
               <div class="card">
-
                 <div class="card-body">
                   <h3 class="text-maroon">Titulo del widgett</h3>
-
                   <p class="card-text">
                     Contenido del widget.
                   </p>
-
                 </div>
               </div>
-
-
             </div>
             <!-- /.col-md-6 -->
           </div>
