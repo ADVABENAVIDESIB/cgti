@@ -1,7 +1,46 @@
+
+<?php 
+include_once 'UrlMeta.class.php';
+$status='danger';
+$url='';
+
+if(isset($_POST['url'])){ 
+    $url = $_POST['url']; 
+     
+    try{ 
+        // Initialize URL meta class 
+        $urlMeta = new UrlMeta($url); 
+         
+        // Get meta info from URL 
+        $metaDataJson = $urlMeta->getWebsiteData(); 
+         
+        // Decode JSON data in array 
+        $metaData = json_decode($metaDataJson); 
+    }catch(Exception $e){ 
+        $statusMsg = $e->getMessage(); 
+    } 
+} 
+ 
+?>
+
+<?php
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on'){
+  $u="http://";
+}else{
+  $u="http://";
+  $u.=$_SERVER['HTTP_HOST'];
+  $u.=$_SERVER['REQUEST_URI'];
+  $u;
+}
+$pagina=$u;
+$segundos="5";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <!--meta http-equiv="refresh" content="<?php echo $segundos;?>" URL="<?php echo $pagina;?>"-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Telemetria Dashboard</title>
@@ -228,14 +267,39 @@
             <!-- Final carta -->
             <!-- /.col-md-6 -->
             <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="text-maroon">Titulo del widgett</h3>
-                  <p class="card-text">
-                    Contenido del widget.
-                  </p>
-                </div>
-              </div>
+     
+            <?php if(!empty($statusMsg)){ ?>
+<div class="alert alert-<?php echo $status;?>"><?php echo $statusMsg; ?></div>
+</div>
+<?php } ?>
+
+
+
+
+<form method="post" action="" class="form">
+<!---->
+<div class="card" style="width:50%; height: 400px;">
+  <div class="card-body">
+  <div class="form-group">
+        <label>Web Page URL:</label>
+        <input type="text" class="form-control" name="url" value="" required="">
+    </div>
+    <div class="form-group" >
+        <input type="submit" class="form-control btn btn-primary" name="submit" value="Extract"/>
+    </div>
+  </div>
+
+  <?php if(!empty($metaData)){ ?>
+
+        <img src="<?php echo $metaData->image; ?>" class="card-img-top" alt="link preview image">
+        <h5 class="card-title"><?php echo $metaData->title; ?></h5>
+        <p class="card-text"><?php echo $metaData->description; ?></p>
+        <a href="<?php echo $metaData->url; ?>" class="btn btn-primary" target="_blank">Visit site</a>
+
+<?php } ?>  
+</div>
+</form>
+
             </div>
             <!-- /.col-md-6 -->
           </div>

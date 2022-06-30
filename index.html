@@ -116,7 +116,7 @@
              
           <li class="nav-item">
             <center>
-            <a href="organismos.php" class="nav-link" id="mnu_OPDs">
+            <a href="/organismos.php" class="nav-link" id="mnu_OPDs">
               <img src="images/opds.png" alt="" class="img-fluid" style="width: 64px;"><br>
               <p class="text-decoration-none">OPDs</p>
             </a>
